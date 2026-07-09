@@ -8,14 +8,22 @@ draft_3.glob("2018argrewrite_*.txt")
 
 good_ids = [2,8,14,17,21,31,34,43,46,47,58,63,65,64,66,78,76]
 
+def by_number(filename):
+    _, n = filename.name.removesuffix(".txt").split("_")
+    return int(n)
+
 x = list()
 for a in draft_3.glob("2018argrewrite_*.txt"):
     for n in good_ids:
         
         if a.name == f"2018argrewrite_{n}.txt":
             x.append(a.name)
-            x.sort()
-            print((a.name))
+
+x.sort(key=by_number)
+print(x)
+
+for good_essay in x:
+    good_essay.copy_into(Path("/tmp"))
      
 
 
