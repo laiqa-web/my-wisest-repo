@@ -15,4 +15,8 @@ with open('Pre_Study.csv') as file:
  for eachline in sort:
     if eachline[14] == a:
       print(eachline[7], eachline[14], eachline[15])
+
+ for eachline in sort:
+     if eachline[14] == a:
+      print(eachline[7].replace("2018argrewrite_",""))
       
